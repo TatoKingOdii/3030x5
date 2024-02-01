@@ -1,0 +1,44 @@
+
+<!--Header Nav bar-->
+<mat-toolbar class="mat-elevation-z4">
+  <div class="nav-content">
+    <button mat-mini-fab (click)="sidenav?.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  School of Random Things
+  <span class="spacer"></span>
+  <button mat-mini-fab class="nav-content">
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+    <div>
+      <span>
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <div class="nav-button">
+            <button mat-button color="primary" class="flex-box">
+                <mat-icon>dashboard</mat-icon>
+                <p>Dashboard</p>
+              </button>
+            </div>
+         </a>
+      </span>
+      <span>
+        <a routerLink="/login" routerLinkActive="active">
+          <div class="nav-button">
+            <button mat-button color="primary" class="flex-box">
+                <mat-icon>logout</mat-icon>
+                <p>Logout</p>
+              </button>
+            </div>
+         </a>
+      </span>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-list [contentList]="contentList"></app-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
